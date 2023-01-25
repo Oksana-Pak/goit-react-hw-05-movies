@@ -49,7 +49,7 @@ const MovieDetails = () => {
 
       <MovieDetailsCard movie={movie} />
       <MovieDetailsInfo />
-      <Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
     </>
