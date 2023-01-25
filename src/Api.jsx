@@ -1,9 +1,7 @@
 import axios from 'axios';
-// import { ErrorMessage } from './components/Services/Notifications';
 
 const URL = 'https://api.themoviedb.org/3';
 const API_KEY = '0b0e3aacc3da91b758b4697a8f18cb42';
-// const IMG_HTTPS = 'https://image.tmdb.org/t/p/w500/';
 
 const fetchApi = async url => {
   try {
@@ -36,11 +34,7 @@ export const fetchMovieCast = async id => {
 export const fetchMovieReviews = async id => {
   const url = `${URL}/movie/${id}/reviews?api_key=${API_KEY}`;
   const response = await fetchApi(url);
-  // if (!response.result) {
-  //   return [];
-  // }
   return response.results;
-  // console.log(response.results);
 };
 export const fetchMoviesQuery = async searchName => {
   const url = `${URL}/search/movie?api_key=${API_KEY}&query=${searchName}`;

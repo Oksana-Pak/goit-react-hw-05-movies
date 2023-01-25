@@ -1,9 +1,6 @@
 import { lazy } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
-// import { Home } from '../pages/Home/Home';
-// import { Movies } from '../pages/Movies/Movies';
-// import { MovieDetails } from '../pages/MovieDetails/MovieDetails';
 import { MovieCast } from './MovieCast/MovieCast';
 import { MovieReviews } from './MovieReviews/MovieReviews';
 
