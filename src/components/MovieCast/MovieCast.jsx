@@ -16,21 +16,30 @@ export const MovieCast = () => {
   }, [movieId]);
 
   return (
-    <CastList>
-      {cast.map(({ cast_id: id, character, name, profile_path }) => {
-        !profile_path ? (src = DEFAULT_IMG) : (src = IMG_HTTPS + profile_path);
+    <div>
+      {!cast.length ? (
+        <div>We don't have any cast for this movie.</div>
+      ) : (
+        <CastList>
+          {cast.map(({ cast_id: id, character, name, profile_path }) => {
+            console.log(cast);
+            !profile_path
+              ? (src = DEFAULT_IMG)
+              : (src = IMG_HTTPS + profile_path);
 
-        return (
-          <li key={id}>
-            <CastWrap>
-              <CastImage src={src} alt={name} />
-            </CastWrap>
+            return (
+              <li key={id}>
+                <CastWrap>
+                  <CastImage src={src} alt={name} />
+                </CastWrap>
 
-            <CastDesc>{name}</CastDesc>
-            <CastDesc>Character: {character}</CastDesc>
-          </li>
-        );
-      })}
-    </CastList>
+                <CastDesc>{name}</CastDesc>
+                <CastDesc>Character: {character}</CastDesc>
+              </li>
+            );
+          })}
+        </CastList>
+      )}
+    </div>
   );
 };
