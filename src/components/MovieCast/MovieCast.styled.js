@@ -16,6 +16,7 @@ export const CastImage = styled.img`
   display: block;
   width: 200px;
   height: 100%;
+  object-fit: cover;
 `;
 export const CastDesc = styled.p`
   font-size: 12px;
